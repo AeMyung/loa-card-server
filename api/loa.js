@@ -15,7 +15,7 @@ export default async function handler(req, res) {
             `https://developer-lostark.game.onstove.com/armories/characters/${encodedName}/profiles`,
             {
                 headers: {
-                    authorization: process.env.LOA_API_KEY,
+                    authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsIng1dCI6IktYMk40TkRDSTJ5NTA5NWpjTWk5TllqY2lyZyIsImtpZCI6IktYMk40TkRDSTJ5NTA5NWpjTWk5TllqY2lyZyJ9.eyJpc3MiOiJodHRwczovL2x1ZHkuZ2FtZS5vbnN0b3ZlLmNvbSIsImF1ZCI6Imh0dHBzOi8vbHVkeS5nYW1lLm9uc3RvdmUuY29tL3Jlc291cmNlcyIsImNsaWVudF9pZCI6IjEwMDAwMDAwMDAwNzc4MzEifQ.Ee2onDxFhv7O5EEpMLfG_DEfxiOPspBLPEb8JmY9dWbUrXilR-lzkqZ5CGUEHp66wZrCyHXDsEFO1-t_R6suFwwPLezTWZcdggfzF8-sm0gWe5ZM7pjGlTG4duJrhP2sE8wCyMBSQBOMQoq49dNLsvQd8yr96i8VLWDxuBnNv3UIOBBnUsHDQtc0BXuJW_FDd9b21ZZUVsBk5Iyy4xXaVWJwHJqKvhG7szDcdXvJF07l2NmizqNd52EsHIEjgXVFvDbJEkpP22NxTe4kkzAH905dOO55aTnmvStcDN4zI1pT6BTq_VqMfTgw5Krp21E3REd4YuMQ_5D3pNPNjXTPBw,
                     accept: "application/json"
                 }
             }
