@@ -34,8 +34,7 @@ export default async function handler(req, res) {
             ? `${data.Title} ${data.CharacterName}`
             : data.CharacterName;
 
-        const desc =
-            `${data.ServerName} ${data.CharacterClassName} · ${data.ItemAvgLevel}`;
+        const desc = `${data.ServerName} · ${data.CharacterClassName}`;
 
         return res.status(200).send(`
 <!doctype html>
