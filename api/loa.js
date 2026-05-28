@@ -1,4 +1,3 @@
-```javascript id="l1y2q0"
 export default async function handler(req, res) {
 
     try {
@@ -74,4 +73,3 @@ export default async function handler(req, res) {
         );
     }
 }
-```
