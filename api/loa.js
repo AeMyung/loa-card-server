@@ -1,13 +1,13 @@
 ```javascript
 export default async function handler(req, res) {
 
-    const name = req.query.name;
-
-    if (!name) {
-        return res.send("닉네임 없음");
-    }
-
     try {
+
+        const name = req.query.name;
+
+        if (!name) {
+            return res.status(400).send("닉네임 없음");
+        }
 
         const encodedName = encodeURIComponent(name);
 
@@ -24,7 +24,7 @@ export default async function handler(req, res) {
         const data = await response.json();
 
         if (!data.CharacterName) {
-            return res.send("캐릭터 없음");
+            return res.status(404).send("캐릭터 없음");
         }
 
         const image = data.CharacterImage;
@@ -37,9 +37,7 @@ export default async function handler(req, res) {
         const desc =
             `${data.ServerName} ${data.CharacterClassName} · ${data.ItemAvgLevel}`;
 
-        res.setHeader("Content-Type", "text/html");
-
-        res.send(`
+        return res.status(200).send(`
 <!doctype html>
 <html>
 <head>
@@ -69,7 +67,10 @@ export default async function handler(req, res) {
     }
 
     catch (e) {
-        res.send("오류 발생");
+
+        return res.status(500).send(
+            "에러 발생: " + e.toString()
+        );
     }
 }
 ```
