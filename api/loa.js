@@ -1,9 +1,11 @@
-```javascript
+```javascript id="l1y2q0"
 export default async function handler(req, res) {
 
     try {
 
-        const name = req.query.name;
+        const { searchParams } = new URL(req.url, "http://localhost");
+
+        const name = searchParams.get("name");
 
         if (!name) {
             return res.status(400).send("닉네임 없음");
@@ -29,8 +31,7 @@ export default async function handler(req, res) {
 
         const image = data.CharacterImage;
 
-        const title =
-            data.Title
+        const title = data.Title
             ? `${data.Title} ${data.CharacterName}`
             : data.CharacterName;
 
@@ -69,7 +70,7 @@ export default async function handler(req, res) {
     catch (e) {
 
         return res.status(500).send(
-            "에러 발생: " + e.toString()
+            "<pre>" + e.toString() + "</pre>"
         );
     }
 }
